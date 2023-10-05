@@ -204,13 +204,10 @@ class CountryCodePickerState extends State<CountryCodePicker> {
                     ),
                   SizedBox(width: 2.w,),
                   if (widget.showDropDownButton)
-                    SizedBox(
-                      height: 9.h,
-                      width: 12.w,
-                      child: const Icon(
-                        Icons.arrow_drop_down,
-                        color: Color(0xff393939),
-                      ),
+                     Icon(
+                      Icons.arrow_drop_down,
+                      color: const Color(0xff393939),
+                      size: widget.flagWidth,
                     ),
             ],
           ),
