@@ -177,15 +177,20 @@ class CountryCodePickerState extends State<CountryCodePicker> {
           ),
           child: Row(
             children: [
-                    Container(
-                      clipBehavior: widget.flagDecoration == null
-                          ? Clip.none
-                          : Clip.hardEdge,
-                      decoration: widget.flagDecoration,
-                      child: Image.asset(
-                        selectedItem!.flagUri!,
-                        package: 'country_code_picker',
-                        width: widget.flagWidth,
+                    Padding(
+                      padding:  EdgeInsets.fromLTRB(10.w,14.h,2.w,12.h),
+                      child: Container(
+                        width: 21.w,
+                        height: 15.h,
+                        clipBehavior: widget.flagDecoration == null
+                            ? Clip.none
+                            : Clip.hardEdge,
+                        decoration: widget.flagDecoration,
+                        child: Image.asset(
+                          selectedItem!.flagUri!,
+                          package: 'country_code_picker',
+                          width: widget.flagWidth,
+                        ),
                       ),
                     ),
                   if (!widget.hideMainText)
@@ -197,10 +202,11 @@ class CountryCodePickerState extends State<CountryCodePicker> {
                           Theme.of(context).textTheme.labelLarge,
                       overflow: widget.textOverflow,
                     ),
+                  SizedBox(width: 2.w,),
                   if (widget.showDropDownButton)
                     const Icon(
                       Icons.arrow_drop_down,
-                      color: Colors.red,
+                      color: Color(0xff393939),
                       size: 12,
                     ),
             ],
