@@ -167,61 +167,58 @@ class CountryCodePickerState extends State<CountryCodePicker> {
     } else {
       internalWidget = TextButton(
         onPressed: widget.enabled ? showCountryCodePickerDialog : null,
-        child: Padding(
-          padding: widget.padding,
-          child: Flex(
-            direction: Axis.horizontal,
-            mainAxisSize: MainAxisSize.min,
-            children: <Widget>[
-              if (widget.showFlagMain != null
-                  ? widget.showFlagMain!
-                  : widget.showFlag)
-                Flexible(
-                  flex: widget.alignLeft ? 0 : 1,
-                  fit: widget.alignLeft ? FlexFit.tight : FlexFit.loose,
-                  child: Container(
-                    clipBehavior: widget.flagDecoration == null
-                        ? Clip.none
-                        : Clip.hardEdge,
-                    decoration: widget.flagDecoration,
-                    margin: widget.alignLeft
+        child: Flex(
+          direction: Axis.horizontal,
+          mainAxisSize: MainAxisSize.min,
+          children: <Widget>[
+            if (widget.showFlagMain != null
+                ? widget.showFlagMain!
+                : widget.showFlag)
+              Flexible(
+                flex: widget.alignLeft ? 0 : 1,
+                fit: widget.alignLeft ? FlexFit.tight : FlexFit.loose,
+                child: Container(
+                  clipBehavior: widget.flagDecoration == null
+                      ? Clip.none
+                      : Clip.hardEdge,
+                  decoration: widget.flagDecoration,
+                  margin: widget.alignLeft
+                      ? const EdgeInsets.only(right: 16.0, left: 8.0)
+                      : const EdgeInsets.only(right: 16.0),
+                  child: Image.asset(
+                    selectedItem!.flagUri!,
+                    package: 'country_code_picker',
+                    width: widget.flagWidth,
+                  ),
+                ),
+              ),
+            if (!widget.hideMainText)
+              Flexible(
+                fit: widget.alignLeft ? FlexFit.tight : FlexFit.loose,
+                child: Text(
+                  widget.showOnlyCountryWhenClosed
+                      ? selectedItem!.toCountryStringOnly()
+                      : selectedItem.toString(),
+                  style: widget.textStyle ??
+                      Theme.of(context).textTheme.labelLarge,
+                  overflow: widget.textOverflow,
+                ),
+              ),
+            if (widget.showDropDownButton)
+              Flexible(
+                flex: widget.alignLeft ? 0 : 1,
+                fit: widget.alignLeft ? FlexFit.tight : FlexFit.loose,
+                child: Padding(
+                    padding: widget.alignLeft
                         ? const EdgeInsets.only(right: 16.0, left: 8.0)
                         : const EdgeInsets.only(right: 16.0),
-                    child: Image.asset(
-                      selectedItem!.flagUri!,
-                      package: 'country_code_picker',
-                      width: widget.flagWidth,
-                    ),
-                  ),
-                ),
-              if (!widget.hideMainText)
-                Flexible(
-                  fit: widget.alignLeft ? FlexFit.tight : FlexFit.loose,
-                  child: Text(
-                    widget.showOnlyCountryWhenClosed
-                        ? selectedItem!.toCountryStringOnly()
-                        : selectedItem.toString(),
-                    style: widget.textStyle ??
-                        Theme.of(context).textTheme.labelLarge,
-                    overflow: widget.textOverflow,
-                  ),
-                ),
-              if (widget.showDropDownButton)
-                Flexible(
-                  flex: widget.alignLeft ? 0 : 1,
-                  fit: widget.alignLeft ? FlexFit.tight : FlexFit.loose,
-                  child: Padding(
-                      padding: widget.alignLeft
-                          ? const EdgeInsets.only(right: 16.0, left: 8.0)
-                          : const EdgeInsets.only(right: 16.0),
-                      child: const Icon(
-                        Icons.arrow_drop_down,
-                        color: Colors.grey,
-                        size: 12,
-                      )),
-                ),
-            ],
-          ),
+                    child: const Icon(
+                      Icons.arrow_drop_down,
+                      color: Colors.grey,
+                      size: 12,
+                    )),
+              ),
+          ],
         ),
       );
     }
