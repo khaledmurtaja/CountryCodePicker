@@ -2,6 +2,7 @@ library country_code_picker;
 
 import 'package:collection/collection.dart' show IterableExtension;
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'src/country_code.dart';
 import 'src/country_codes.dart';
@@ -168,9 +169,10 @@ class CountryCodePickerState extends State<CountryCodePicker> {
       internalWidget = TextButton(
         onPressed: widget.enabled ? showCountryCodePickerDialog : null,
         child: Container(
-          width: 90,
+          width: 90.w,
+          height: 41.h,
           decoration: const BoxDecoration(
-              color: Colors.blueAccent,
+              color: Color(0xFFCBD5D1),
               borderRadius: BorderRadius.all(Radius.circular(10))
           ),
           child: Row(

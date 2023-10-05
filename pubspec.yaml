@@ -12,6 +12,8 @@ dependencies:
   flutter:
     sdk: flutter
   collection:
+  flutter_screenutil: ^5.9.0
+
 
 flutter:
   assets:
