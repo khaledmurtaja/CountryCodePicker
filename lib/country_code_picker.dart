@@ -207,19 +207,15 @@ class CountryCodePickerState extends State<CountryCodePicker> {
                   ),
                 ),
               if (widget.showDropDownButton)
-                Flexible(
-                  flex: widget.alignLeft ? 0 : 1,
-                  fit: widget.alignLeft ? FlexFit.tight : FlexFit.loose,
-                  child: Padding(
-                      padding: widget.alignLeft
-                          ? const EdgeInsets.only(right: 0.0, left: 0.0)
-                          : const EdgeInsets.only(right: 0.0),
-                      child: Icon(
-                        Icons.arrow_drop_down,
-                        color: Colors.grey,
-                        size: widget.flagWidth/2,
-                      )),
-                ),
+                Padding(
+                    padding: widget.alignLeft
+                        ? const EdgeInsets.only(right: 0.0, left: 0.0)
+                        : const EdgeInsets.only(right: 0.0),
+                    child: Icon(
+                      Icons.arrow_drop_down,
+                      color: Colors.grey,
+                      size: widget.flagWidth/2,
+                    )),
             ],
           ),
         ),
