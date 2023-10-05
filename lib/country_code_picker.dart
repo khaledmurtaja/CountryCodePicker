@@ -210,7 +210,6 @@ class CountryCodePickerState extends State<CountryCodePicker> {
                       child: const Icon(
                         Icons.arrow_drop_down,
                         color: Color(0xff393939),
-                        size: 12,
                       ),
                     ),
             ],
