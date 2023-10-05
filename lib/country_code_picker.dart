@@ -167,35 +167,42 @@ class CountryCodePickerState extends State<CountryCodePicker> {
     } else {
       internalWidget = TextButton(
         onPressed: widget.enabled ? showCountryCodePickerDialog : null,
-        child: Row(
-          children: [
-                  Container(
-                    clipBehavior: widget.flagDecoration == null
-                        ? Clip.none
-                        : Clip.hardEdge,
-                    decoration: widget.flagDecoration,
-                    child: Image.asset(
-                      selectedItem!.flagUri!,
-                      package: 'country_code_picker',
-                      width: widget.flagWidth,
+        child: Container(
+          width: 90,
+          color: Colors.blueAccent,
+          decoration: const BoxDecoration(
+            borderRadius: BorderRadius.all(Radius.circular(10))
+          ),
+          child: Row(
+            children: [
+                    Container(
+                      clipBehavior: widget.flagDecoration == null
+                          ? Clip.none
+                          : Clip.hardEdge,
+                      decoration: widget.flagDecoration,
+                      child: Image.asset(
+                        selectedItem!.flagUri!,
+                        package: 'country_code_picker',
+                        width: widget.flagWidth,
+                      ),
                     ),
-                  ),
-                if (!widget.hideMainText)
-                  Text(
-                    widget.showOnlyCountryWhenClosed
-                        ? selectedItem!.toCountryStringOnly()
-                        : selectedItem.toString(),
-                    style: widget.textStyle ??
-                        Theme.of(context).textTheme.labelLarge,
-                    overflow: widget.textOverflow,
-                  ),
-                if (widget.showDropDownButton)
-                  const Icon(
-                    Icons.arrow_drop_down,
-                    color: Colors.red,
-                    size: 12,
-                  ),
-          ],
+                  if (!widget.hideMainText)
+                    Text(
+                      widget.showOnlyCountryWhenClosed
+                          ? selectedItem!.toCountryStringOnly()
+                          : selectedItem.toString(),
+                      style: widget.textStyle ??
+                          Theme.of(context).textTheme.labelLarge,
+                      overflow: widget.textOverflow,
+                    ),
+                  if (widget.showDropDownButton)
+                    const Icon(
+                      Icons.arrow_drop_down,
+                      color: Colors.red,
+                      size: 12,
+                    ),
+            ],
+          ),
         ),
       );
     }
