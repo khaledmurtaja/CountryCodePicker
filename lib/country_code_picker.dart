@@ -177,47 +177,38 @@ class CountryCodePickerState extends State<CountryCodePicker> {
           ),
           child: Row(
             children: [
-                    Expanded(
-                      flex: 1,
-                      child: Padding(
-                        padding:  EdgeInsets.fromLTRB(10.w,14.h,2.w,12.h),
-                        child: Container(
-                          width: 21.w,
-                          height: 15.h,
-                          clipBehavior: widget.flagDecoration == null
-                              ? Clip.none
-                              : Clip.hardEdge,
-                          decoration: widget.flagDecoration,
-                          child: Image.asset(
-                            selectedItem!.flagUri!,
-                            package: 'country_code_picker',
-                            width: widget.flagWidth,
-                          ),
+                    Padding(
+                      padding:  EdgeInsets.fromLTRB(10.w,14.h,2.w,12.h),
+                      child: Container(
+                        width: 21.w,
+                        height: 15.h,
+                        clipBehavior: widget.flagDecoration == null
+                            ? Clip.none
+                            : Clip.hardEdge,
+                        decoration: widget.flagDecoration,
+                        child: Image.asset(
+                          selectedItem!.flagUri!,
+                          package: 'country_code_picker',
+                          width: widget.flagWidth,
                         ),
                       ),
                     ),
                   if (!widget.hideMainText)
-                    Expanded(
-                      flex: 2,
-                      child: Text(
-                        widget.showOnlyCountryWhenClosed
-                            ? selectedItem!.toCountryStringOnly()
-                            : selectedItem.toString(),
-                        style: widget.textStyle ??
-                            Theme.of(context).textTheme.labelLarge,
-                        overflow: widget.textOverflow,
-                      ),
+                    Text(
+                      widget.showOnlyCountryWhenClosed
+                          ? selectedItem!.toCountryStringOnly()
+                          : selectedItem.toString(),
+                      style: widget.textStyle ??
+                          Theme.of(context).textTheme.labelLarge,
+                      overflow: widget.textOverflow,
                     ),
                   SizedBox(width: 2.w,),
                   if (widget.showDropDownButton)
-                     Expanded(
-                       flex: 1,
-                       child: Icon(
-                        Icons.arrow_drop_down,
-                        color: const Color(0xff393939),
-                        size: widget.flagWidth.w,
+                     Icon(
+                      Icons.arrow_drop_down,
+                      color: const Color(0xff393939),
+                      size: widget.flagWidth.w,
                     ),
-                     ),
             ],
           ),
         ),
