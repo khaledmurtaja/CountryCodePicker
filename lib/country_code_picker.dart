@@ -215,7 +215,7 @@ class CountryCodePickerState extends State<CountryCodePicker> {
                         : const EdgeInsets.only(right: 0.0),
                     child: const Icon(
                       Icons.arrow_drop_down,
-                      color: Colors.red,
+                      color: Colors.yellow,
                       size: 12,
                     )),
               ),
