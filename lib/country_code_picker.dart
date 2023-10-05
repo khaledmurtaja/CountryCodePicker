@@ -214,10 +214,10 @@ class CountryCodePickerState extends State<CountryCodePicker> {
                       padding: widget.alignLeft
                           ? const EdgeInsets.only(right: 16.0, left: 8.0)
                           : const EdgeInsets.only(right: 16.0),
-                      child: Icon(
+                      child: const Icon(
                         Icons.arrow_drop_down,
                         color: Colors.grey,
-                        size: widget.flagWidth,
+                        size: 12,
                       )),
                 ),
             ],
