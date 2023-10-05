@@ -128,7 +128,7 @@ class CountryCodePicker extends StatefulWidget {
     List<Map<String, String>> jsonList = countryList;
 
     List<CountryCode> elements =
-        jsonList.map((json) => CountryCode.fromJson(json)).toList();
+    jsonList.map((json) => CountryCode.fromJson(json)).toList();
 
     if (comparator != null) {
       elements.sort(comparator);
@@ -136,12 +136,12 @@ class CountryCodePicker extends StatefulWidget {
 
     if (countryFilter != null && countryFilter!.isNotEmpty) {
       final uppercaseCustomList =
-          countryFilter!.map((criteria) => criteria.toUpperCase()).toList();
+      countryFilter!.map((criteria) => criteria.toUpperCase()).toList();
       elements = elements
           .where((criteria) =>
-              uppercaseCustomList.contains(criteria.code) ||
-              uppercaseCustomList.contains(criteria.name) ||
-              uppercaseCustomList.contains(criteria.dialCode))
+      uppercaseCustomList.contains(criteria.code) ||
+          uppercaseCustomList.contains(criteria.name) ||
+          uppercaseCustomList.contains(criteria.dialCode))
           .toList();
     }
 
@@ -243,9 +243,9 @@ class CountryCodePickerState extends State<CountryCodePicker> {
     if (oldWidget.initialSelection != widget.initialSelection) {
       if (widget.initialSelection != null) {
         selectedItem = elements.firstWhere(
-            (criteria) =>
-                (criteria.code!.toUpperCase() ==
-                    widget.initialSelection!.toUpperCase()) ||
+                (criteria) =>
+            (criteria.code!.toUpperCase() ==
+                widget.initialSelection!.toUpperCase()) ||
                 (criteria.dialCode == widget.initialSelection) ||
                 (criteria.name!.toUpperCase() ==
                     widget.initialSelection!.toUpperCase()),
@@ -263,9 +263,9 @@ class CountryCodePickerState extends State<CountryCodePicker> {
 
     if (widget.initialSelection != null) {
       selectedItem = elements.firstWhere(
-          (item) =>
-              (item.code!.toUpperCase() ==
-                  widget.initialSelection!.toUpperCase()) ||
+              (item) =>
+          (item.code!.toUpperCase() ==
+              widget.initialSelection!.toUpperCase()) ||
               (item.dialCode == widget.initialSelection) ||
               (item.name!.toUpperCase() ==
                   widget.initialSelection!.toUpperCase()),
@@ -276,11 +276,11 @@ class CountryCodePickerState extends State<CountryCodePicker> {
 
     favoriteElements = elements
         .where((item) =>
-            widget.favorite.firstWhereOrNull((criteria) =>
-                item.code!.toUpperCase() == criteria.toUpperCase() ||
-                item.dialCode == criteria ||
-                item.name!.toUpperCase() == criteria.toUpperCase()) !=
-            null)
+    widget.favorite.firstWhereOrNull((criteria) =>
+    item.code!.toUpperCase() == criteria.toUpperCase() ||
+        item.dialCode == criteria ||
+        item.name!.toUpperCase() == criteria.toUpperCase()) !=
+        null)
         .toList();
   }
 
