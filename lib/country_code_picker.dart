@@ -169,9 +169,9 @@ class CountryCodePickerState extends State<CountryCodePicker> {
         onPressed: widget.enabled ? showCountryCodePickerDialog : null,
         child: Container(
           width: 90,
-          color: Colors.blueAccent,
           decoration: const BoxDecoration(
-            borderRadius: BorderRadius.all(Radius.circular(10))
+              color: Colors.blueAccent,
+              borderRadius: BorderRadius.all(Radius.circular(10))
           ),
           child: Row(
             children: [
