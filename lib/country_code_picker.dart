@@ -178,6 +178,7 @@ class CountryCodePickerState extends State<CountryCodePicker> {
           child: Row(
             children: [
                     Expanded(
+                      flex: 1,
                       child: Padding(
                         padding:  EdgeInsets.fromLTRB(10.w,14.h,2.w,12.h),
                         child: Container(
@@ -197,6 +198,7 @@ class CountryCodePickerState extends State<CountryCodePicker> {
                     ),
                   if (!widget.hideMainText)
                     Expanded(
+                      flex: 2,
                       child: Text(
                         widget.showOnlyCountryWhenClosed
                             ? selectedItem!.toCountryStringOnly()
@@ -209,6 +211,7 @@ class CountryCodePickerState extends State<CountryCodePicker> {
                   SizedBox(width: 2.w,),
                   if (widget.showDropDownButton)
                      Expanded(
+                       flex: 1,
                        child: Icon(
                         Icons.arrow_drop_down,
                         color: const Color(0xff393939),
