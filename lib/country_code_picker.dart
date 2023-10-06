@@ -202,7 +202,7 @@ class CountryCodePickerState extends State<CountryCodePicker> {
                           Theme.of(context).textTheme.labelLarge,
                       overflow: widget.textOverflow,
                     ),
-                  SizedBox(width: 2.w,),
+                  // SizedBox(width: 2.w,),
                   if (widget.showDropDownButton)
                      Icon(
                       Icons.arrow_drop_down,
