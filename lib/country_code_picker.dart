@@ -194,7 +194,8 @@ class CountryCodePickerState extends State<CountryCodePicker> {
                       ),
                     ),
                   if (!widget.hideMainText)
-                    FittedBox(
+                    SizedBox(
+                      width: 36.w,
                       child: Text(
                         widget.showOnlyCountryWhenClosed
                             ? selectedItem!.toCountryStringOnly()
