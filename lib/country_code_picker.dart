@@ -194,19 +194,20 @@ class CountryCodePickerState extends State<CountryCodePicker> {
                       ),
                     ),
                   if (!widget.hideMainText)
-                    Text(
-                      widget.showOnlyCountryWhenClosed
-                          ? selectedItem!.toCountryStringOnly()
-                          : selectedItem.toString(),
-                      style: widget.textStyle ??
-                          Theme.of(context).textTheme.labelLarge,
-                      overflow: widget.textOverflow,
+                    FittedBox(
+                      child: Text(
+                        widget.showOnlyCountryWhenClosed
+                            ? selectedItem!.toCountryStringOnly()
+                            : selectedItem.toString(),
+                        style: widget.textStyle ??
+                            Theme.of(context).textTheme.labelLarge,
+                        overflow: widget.textOverflow,
+                      ),
                     ),
-                  // SizedBox(width: 2.w,),
                   if (widget.showDropDownButton)
-                     Icon(
+                     const Icon(
                       Icons.arrow_drop_down,
-                      color: const Color(0xff393939),
+                      color: Color(0xff393939),
                       // size: widget.flagWidth.w,
                     ),
             ],
