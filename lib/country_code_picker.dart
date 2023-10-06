@@ -171,11 +171,12 @@ class CountryCodePickerState extends State<CountryCodePicker> {
         child: Container(
           width: 90.w,
           height: 41.h,
-          decoration: const BoxDecoration(
-              color: Color(0xFFCBD5D1),
-              borderRadius: BorderRadius.all(Radius.circular(10))
+          decoration:  BoxDecoration(
+              color: const Color(0xFFCBD5D1),
+              borderRadius: BorderRadius.all(Radius.circular(10.spMin))
           ),
           child: Row(
+            mainAxisSize: MainAxisSize.max,
             children: [
                     Padding(
                       padding:  EdgeInsets.fromLTRB(10.w,14.h,2.w,12.h),
@@ -194,15 +195,13 @@ class CountryCodePickerState extends State<CountryCodePicker> {
                       ),
                     ),
                   if (!widget.hideMainText)
-                    Expanded(
-                      child: Text(
-                        widget.showOnlyCountryWhenClosed
-                            ? selectedItem!.toCountryStringOnly()
-                            : selectedItem.toString(),
-                        style: widget.textStyle ??
-                            Theme.of(context).textTheme.labelLarge,
-                        overflow: widget.textOverflow,
-                      ),
+                    Text(
+                      widget.showOnlyCountryWhenClosed
+                          ? selectedItem!.toCountryStringOnly()
+                          : selectedItem.toString(),
+                      style: widget.textStyle ??
+                          Theme.of(context).textTheme.labelLarge,
+                      overflow: widget.textOverflow,
                     ),
                   if (widget.showDropDownButton)
                      const Icon(
