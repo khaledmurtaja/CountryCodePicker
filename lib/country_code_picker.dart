@@ -169,14 +169,14 @@ class CountryCodePickerState extends State<CountryCodePicker> {
       internalWidget = TextButton(
         onPressed: widget.enabled ? showCountryCodePickerDialog : null,
         child: Container(
-          width: 90.w,
+          // width: 90.w,
           height: 41.h,
           decoration:  BoxDecoration(
               color: const Color(0xFFCBD5D1),
               borderRadius: BorderRadius.all(Radius.circular(10.spMin))
           ),
           child: Row(
-            mainAxisSize: MainAxisSize.max,
+            mainAxisSize: MainAxisSize.min,
             children: [
                     Padding(
                       padding:  EdgeInsets.fromLTRB(10.w,14.h,2.w,12.h),
